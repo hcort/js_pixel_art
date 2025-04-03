@@ -1,0 +1,173 @@
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background-color: #f0f0f0;
+    font-family: Arial, sans-serif;
+}
+#controls {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+#pixel-art-grid {
+    display: grid;
+    border: 1px solid black;
+    width: 90vh;
+    height: 90vh;
+}
+.pixel {
+    border: 1px solid #ddd;
+    cursor: pointer;
+}
+.color-palette {
+    display: grid;
+    grid-template-columns: repeat(5, 30px);
+    gap: 5px;
+    margin-top: 10px;
+}
+#recent-colors {
+    display: grid;
+    grid-template-columns: repeat(4, 30px);
+    gap: 5px;
+    margin-top: 10px;
+    border: 1px solid #000;
+    padding: 10px;
+}
+.color-option {
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+    border: 1px solid #000;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background-color: #f0f0f0;
+    font-family: Arial, sans-serif;
+}
+
+.container {
+    position: relative;
+}
+
+.color-wheel {
+    width: 300px;
+    height: 300px;
+    border-radius: 50%;
+    position: relative;
+    cursor: pointer;
+    overflow: hidden; /* This ensures the canvas is clipped to the round shape */
+}
+
+.color-info {
+    margin-top: 20px;
+    font-size: 18px;
+    color: #333;
+}
+
+.color-box {
+    display: inline-block;
+    width: 40px;
+    height: 40px;
+    margin-left: 10px;
+    border-radius: 50%;
+}
+
+canvas {
+    position: absolute;
+    top: 0;
+    left: 0;
+    pointer-events: none; /* So the canvas doesn't block clicks */
+    border-radius: 50%; /* Make the canvas round to match the wheel */
+}
+
+.black-dot {
+    width: 10px;
+    height: 10px;
+    background-color: white;
+    border-radius: 50%;
+    position: absolute;
+}
+
+
+/* Layout container */
+.main-container {
+    display: flex;
+    width: 100%;
+    height: 90vh;
+    gap: 20px;
+}
+
+/* Left & Right panels */
+#left-panel {
+    width: 20%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;    
+    margin-left: 30px;
+    margin-right: 10px;
+}
+#right-panel {
+    width: 20%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+}
+
+/* Center content (canvas) */
+/*.canvas-container {*/
+#pixel-art-container {
+    flex-grow: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+/* Grid size buttons container */
+.grid-size-buttons {
+    display: grid;    
+    grid-template-columns: repeat(2, 1fr); /* 2 columns with equal width */
+    grid-template-rows: repeat(2, 1fr);    /* 2 rows with equal height */
+    gap: 40px;
+}
+
+/* Buttons & Input */
+.grid-size-buttons button,
+.grid-size-buttons input {
+    padding: 5px 10px;
+    font-size: 12px;
+    height: 50px;
+    text-align: center;
+    cursor: pointer;
+    background-color: #f0f0f0;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    transition: background-color 0.3s ease;
+}
+
+.grid-size-buttons button:hover {
+    background-color: #e0e0e0;
+}
+
+.grid-size-buttons input {
+    appearance: textfield;
+}
+
+/* Last used colors container */
+.last-used-colors {
+    display: grid;
+    grid-template-columns: repeat(5, 30px);
+    gap: 5px;
+    margin-top: 10px;
+}

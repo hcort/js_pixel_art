@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pixel Art Canvas</title>    
+    <link rel="stylesheet" href="pixel.css">
+</head>
+<body>
+    
+    <div class="main-container">
+
+    <!--<div class="container"> --> 
+        <!-- Left Panel -->
+        <div id="left-panel">
+            <!-- Grid Size Selection Container -->
+            <div class="grid-size-container">
+                <div class="grid-size-buttons">
+                    <button onclick="setGridSize(8)">8x8</button>
+                    <button onclick="setGridSize(16)">16x16</button>
+                    <button onclick="setGridSize(32)">32x32</button>
+                    <input type="number" id="customSizeInput" placeholder="..." min="1" />
+                </div>
+            </div>
+            
+            <div class="container">
+                <div class="color-wheel" id="colorWheel"></div>
+                <canvas id="colorCanvas" width="300" height="300"></canvas>
+            </div>
+
+            <div class="color-info">
+                <div id="colorBox" class="color-box" style="background-color: #ffffff;"></div>
+            </div>
+
+            <div id="secondaryColorPalette" class="color-palette"></div>
+    
+            <button id="saveButton">Save as PNG</button>
+        </div>
+
+        <!-- Canvas Area -->
+        <div id="pixel-art-container">
+            <div id="pixel-art-grid"></div>
+        </div>
+
+        <!-- Right Panel -->
+        <div id="right-panel">
+            <button id="fillButton">Fill Tool</button>
+
+            <div class="color-threshold">
+                <label for="threshold">Threshold (0-255):</label>
+                <input type="range" id="threshold" min="0" max="255" value="50">
+                <span id="thresholdValue">50</span>
+            </div>
+        
+    
+            <div id="recent-colors" class="recent-colors"></div>
+        </div>
+
+
+    </div>
+    </div>
+</body>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+<script src="./color_wheel.js"></script>
+<script src="./canvas.js"></script>
+<script src="./fill.js"></script>
+</html>
