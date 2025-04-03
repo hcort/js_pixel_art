@@ -1,4 +1,5 @@
 let gridSize = 16;
+let isMouseDown = false;
 
 // function to redraw the pixel grid in the selected grid size
 function setGridSize(size) {
@@ -51,8 +52,16 @@ function updateRecentColors() {
     });
 }
 
+window.addEventListener('mouseup', () => {
+    console.log('window mouseup isMouseDown = false');
+    isMouseDown = false;
+});
+
 function createGrid() {
     const grid = document.getElementById("pixel-art-grid");
+    grid.addEventListener('mouseleave', (e) => {
+        isMouseDown = false;
+    });
     grid.innerHTML = "";
     grid.style.gridTemplateColumns = `repeat(${gridSize}, 1fr)`;
     grid.style.gridTemplateRows = `repeat(${gridSize}, 1fr)`;
@@ -63,5 +72,22 @@ function createGrid() {
         cell.classList.add("cell");
         cell.style.backgroundColor = "#ffffff";
         grid.appendChild(cell);
+        
+
+        cell.addEventListener('mouseenter', (e) => {
+            if (isMouseDown){
+                const targetColor = window.getComputedStyle(document.getElementById('colorBox')).backgroundColor;
+                colorCell(cell, targetColor);
+            }
+        });
+
+        cell.addEventListener('mousedown', () => {
+            isMouseDown = true;
+            handleCellClick(cell);
+        });
+
+        cell.addEventListener('mouseup', () => {
+            isMouseDown = false;
+        });
     }
 }

@@ -57,11 +57,9 @@ function isColorSimilar(c1, c2, threshold) {
     return rDiff <= threshold && gDiff <= threshold && bDiff <= threshold;
 }
 
-// Handle mouse events for coloring
-pixelCanvas.addEventListener('click', (e) => {
-    isMouseDown = true;
-    const targetCell = e.target;
+function handleCellClick(targetCell){    
     if (targetCell.classList.contains('pixel')) {
+        saveState();
         // If fill mode is on, perform flood fill, else, color just the cell
         const targetColor = window.getComputedStyle(document.getElementById('colorBox')).backgroundColor;
         if (fillMode) {
@@ -71,11 +69,9 @@ pixelCanvas.addEventListener('click', (e) => {
         } else {
             colorCell(targetCell, targetColor);
         }        
-        addRecentColor(targetColor)
+        addRecentColor(targetColor);
     }
-});
-
-
+}
 
 // Toggle button functionality for fill tool
 fillButton.addEventListener('click', () => {
