@@ -16,3 +16,4 @@ Also:
 * Fill tool that lets you color great areas of your canvas with just one click using a threshold value.
 * Drag your mouse across the pixels to create freeform drawings
 * If you did something you regret just press Ctrl-Z
+* Save your art to a local PNG file
