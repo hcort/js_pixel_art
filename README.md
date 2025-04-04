@@ -3,7 +3,7 @@ A small pixel art editor in HTML and Javascript
 
 You can [try it here](https://hcort.github.io/js_pixel_art/pixel.html)
 
-![alt Pixel Art Editor](https://i.imgur.com/29AN6qD.png)
+![alt Pixel Art Editor](https://i.imgur.com/tollu5r.png)
 
 Draw your own pixel art!
 
@@ -16,4 +16,3 @@ Also:
 * Fill tool that lets you color great areas of your canvas with just one click using a threshold value.
 * Drag your mouse across the pixels to create freeform drawings
 * If you did something you regret just press Ctrl-Z
-* Save your art to a local PNG file
